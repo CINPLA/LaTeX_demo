@@ -1,0 +1,26 @@
+\input{preamble}
+\title{\LaTeX;\, How to use it}
+\author{Mikkel Elle Lepper\o{}d}
+\begin{document}
+\maketitle
+\input{../Chapters/Abstract}
+
+\clearpage\thispagestyle{empty}
+\tableofcontents
+\newpage
+\renewcommand{\headrulewidth}{.5pt}
+\newpage
+\pagenumbering{arabic}
+\input{../Chapters/TwoByTwo}
+
+\input{../Chapters/Conclusion}
+\newpage\appendix
+\begin{appendices}
+\input{../Chapters/Appendices/MeanDiff}
+\end{appendices}
+\newpage
+\pagestyle{empty}
+\bibliographystyle{apa}
+\bibliography{myrefs}
+\listoftodos
+\end{document}

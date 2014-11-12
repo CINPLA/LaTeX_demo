@@ -1,0 +1,29 @@
+\section{Equations and reference to them}\label{app:meanDiff}
+
+\subsection{Differentiation of integral equations}\label{sapp:diff}
+\begin{theorem}\label{thm:inteq}
+Let $ F: \mathbb{R} \rightarrow \mathbb{R} $ be given as
+\begin{align}\label{eq:intdiff}
+F(t) = \intdef{a}{t}{f(t,s)}{s},
+\end{align}
+where $ f $ is a continuous differentiable function for all $ s,\,t \in \mathbb{R} $ and well defined for $ f(t,t) $. Assume uniform convergence of the integral $ \intdef{a}{t}{\left[f(t+h,s) - f(t,s)\right]}{s} $, where $ h > 0 $. Then the derivative of $ F $ is given as
+\begin{align*}
+\derivative{F}{t}(t) = \intdef{a}{t}{\pderivative{f}{t}(t,s)}{s} + f(t,t)
+\end{align*}
+\end{theorem}
+\begin{proof}
+Consider the difference given as
+\begin{align*}
+\frac{F(t+h) - F(t)}{h} &= \frac{1}{h}\left(\intdef{a}{t+h}{f(t+h,s)}{s} - \intdef{a}{t}{f(t,s)}{s}\right)\\
+&= \frac{1}{h}\left(\intdef{a}{t}{f(t+h,s)}{s} + \intdef{t}{t+h}{f(t+h,s)}{s} - \intdef{a}{t}{f(t,s)}{s}\right)\\
+&= \frac{1}{h}\left(\intdef{a}{t}{\left[f(t+h,s) - f(t,s)\right]}{s} + \intdef{t}{t+h}{f(t+h,s)}{s}\right)\\
+\end{align*}
+Then by the mean value theorem for integrals where $ t^* \in [t, t+h] $ and the limit definition of the derivative we get
+\begin{align*}
+\derivative{F}{t}(t) &= \lim\limits_{h \rightarrow 0} \frac{1}{h}\intdef{a}{t}{\left[f(t+h,s) - f(t,s)\right]}{s} + f(t+h,t^*)\\
+&= \intdef{a}{t}{\pderivative{f}{t}(t,s)}{s} + f(t,t)
+\end{align*}
+\end{proof}
+
+\subsection{Reference to equations, sections and theorems(which could be used as example etc.)}
+\cref{thm:inteq} is nice to know of if you encounter something like \cref{eq:intdiff}.
